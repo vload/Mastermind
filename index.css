@@ -1,0 +1,29 @@
+div.displaybox{
+    background-color:lightgray;
+    border: 2px solid  black;
+    height: 200px;
+    width: 100%;
+}
+
+div.container{
+    margin: 5%;
+    float: left;
+}
+
+div.button{    
+    margin:2px;
+    float:left;
+    height: fit-content;
+    width: fit-content;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    width:100%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

@@ -1,0 +1,14 @@
+1.
+PUT /myfile  HTTP/1.1
+host:httpbin.org
+Content-type:text/plain
+Content-length:12
+
+HTTP/1.1 404 NOT FOUND
+
+The server doesn't allow the creation of such a resource.
+
+2.
+If the length is larger we store the newline characters.
+If the length is smaller we get a 400 BAD REQUEST response.
+

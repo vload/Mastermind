@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style src="index.css"></style>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+    <script>
+        function test(button) {
+            let parent = button.parentNode;
+
+            let color = window.getComputedStyle(parent, null).getPropertyValue('background-color');
+
+            parent.parentNode.parentNode.firstElementChild.style.backgroundColor = color;
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="displaybox"></div>
+
+        <div class="buttons">
+            <div class="button" style="background-color: red;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: orange;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: yellow;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: green;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: blue;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: magenta;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="displaybox"></div>
+
+        <div class="buttons">
+            <div class="button" style="background-color: red;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: orange;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: yellow;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: green;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: blue;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: magenta;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="displaybox"></div>
+
+        <div class="buttons">
+            <div class="button" style="background-color: red;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: orange;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: yellow;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: green;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: blue;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: magenta;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="displaybox"></div>
+
+        <div class="buttons">
+            <div class="button" style="background-color: red;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: orange;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: yellow;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: green;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: blue;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+            <div class="button" style="background-color: magenta;">
+                <input type="radio" name="b1" class="radiobox" onchange="test(this)">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

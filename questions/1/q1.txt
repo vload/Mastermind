@@ -1,0 +1,42 @@
+1.
+HEAD /r/TUDelft HTTP/1.1
+host:reddit.com
+
+HTTP/1.1 301 Moved Permanently
+...
+Location: https://www.reddit.com/r/TUDelft
+...
+
+HEAD /r/TUDelft HTTP/1.1
+host:www.reddit.com
+
+HTTP/1.1 200 OK
+
+GET /r/TUDelft HTTP/1.1
+host:www.reddit.com
+
+Big wall of text that I can't scroll through.
+I guess it says HTTP/1.1 200 OK. 
+
+2.
+yes
+
+3.
+cache-control: private, s-maxage=0, max-age=0, must-revalidate, no-store
+
+private:
+    use the private cache
+s-maxage=0:
+    response is fresh for 0 seconds (in shared caches)
+max-age=0:
+    response is fresh for 0 seconds
+must-revalidate:
+    when the respone is no longer fresh (instantly)
+    it has to be revalidated before reuse
+no-store:
+    don't store this in any cache
+
+4.
+Accept-Encoding: gzip, deflate, br
+
+The browser supports gzip, deflate and br encodings.
