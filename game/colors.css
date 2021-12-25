@@ -1,0 +1,13 @@
+.background-colored, body, html, #input-container{
+    background-color: rgb(66, 66, 66);
+}
+
+
+.displaybox{
+    background-color:lightgray;
+}
+
+
+.test-button{
+    background-color:gray;
+}

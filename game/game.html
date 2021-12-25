@@ -7,13 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="colors.css" media="screen" />
     <script src="script.js"></script>
 </head>
 
-<body class="box-model-reset">
-    <div class="box-model-reset center-children" id="input-container">
-        <div class="displaybox">
-            <div class="buttons"></div>
+<body>
+    <div class="center-children main-box" id="input-container">
+        <div class="main-subbox displaybox">
+            <div id="buttons"></div>
+        </div>
+        <div class="main-subbox center-children test-box">
+            <div class="test-button" onclick="onTestClick(this)"></div>
         </div>
     </div>
 </body>

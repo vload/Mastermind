@@ -1,31 +1,32 @@
 function onButtonClick(button) {
-    function apply_animation(button) {
-        button.classList.add("button-transition");
-        button.classList.add("button-final");
-    }
+    button.classList.add("animate-color-button");
 
-    function end_animation(button) {
+    setTimeout(function (button) {
         let color = window.getComputedStyle(button, null).getPropertyValue('background-color');
         button.parentNode.parentNode.style.backgroundColor = color;
-        button.classList.remove("button-transition");
-        button.classList.remove("button-final");
-    }
+        button.classList.remove("animate-color-button");
+    }, 400, button);
+}
 
+function onTestClick(button) {
+    button.classList.add("test-button-animation");
 
-    apply_animation(button);
-
-    setTimeout(end_animation, 500, button);
+    setTimeout(function (button) {
+        let color = window.getComputedStyle(button, null).getPropertyValue('background-color');
+        button.parentNode.parentNode.style.backgroundColor = color;
+        button.classList.remove("test-button-animation");
+    }, 1000, button);
 }
 
 function generateButtons() {
     let colors = ["red", "orange", "yellow", "green", "blue", "magenta"];
 
-    let container = document.querySelector('.buttons')
+    let container = document.getElementById('buttons')
 
     for (let color of colors) {
 
         let button = document.createElement('div');
-        button.className = "dot button";
+        button.className = "circle color-button";
         button.style = "background-color:" + color;
         button.setAttribute("onclick", "onButtonClick(this)");
 
