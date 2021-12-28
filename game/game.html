@@ -5,20 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mastermind</title>
     <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="colors.css" media="screen" />
     <script src="script.js"></script>
 </head>
 
-<body>
-    <div class="center-children main-box" id="input-container">
-        <div class="main-subbox displaybox">
-            <div id="buttons"></div>
-        </div>
-        <div class="main-subbox center-children test-box">
-            <div class="test-button" onclick="onTestClick(this)"></div>
-        </div>
+<body id="game-grid">
+    <div id="test-button" class="box" onclick="onGuessButtonClick(this)">
+        <p>Guess</p>
     </div>
 </body>
 
