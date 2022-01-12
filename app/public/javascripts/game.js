@@ -6,15 +6,6 @@ const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'magenta'];
 let currentGuess = 0;
 
 
-window.onload = function () {
-    setGridLayout();
-    generateColorSelectors();
-    generateColorButtons();
-    generateInnerBoxesAndColorElements();
-    generateGuessBoxesAndGuessResponseBoxes();
-    generateGuessResponseItems();
-}
-
 function generateGuessResponseItem(i, j) {
     let guessResponseItem = getNewDiv();
     guessResponseItem.id = 'guess-response-item-' + i + '-' + j;
@@ -139,6 +130,12 @@ function setGridLayout() {
 
     grid.style.gridTemplateRows =
         '2fr ' + '1fr '.repeat(guesses);
+}
+
+function removeWaiting() {
+    let w = document.getElementById("waiting");
+
+    w.parentNode.removeChild(w);
 }
 
 function animateColorButton(colorButton) {
@@ -324,4 +321,19 @@ function recieveResponse() {
     let response = ['black', 'black', 'white'];
 
     return response;
+}
+
+function onAllPlayersConnected() {
+    removeWaiting();
+}
+
+window.onload = function () {
+    setGridLayout();
+    generateColorSelectors();
+    generateColorButtons();
+    generateInnerBoxesAndColorElements();
+    generateGuessBoxesAndGuessResponseBoxes();
+    generateGuessResponseItems();
+
+    setTimeout(onAllPlayersConnected, 1000);
 }

@@ -1,1 +1,3 @@
-experiments*
+.old
+bin
+node_modules

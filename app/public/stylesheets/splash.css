@@ -1,8 +1,9 @@
-.box-model-reset, body{
+body, html{
     margin: 0;
-    border: 0;
-    padding: 0;
+    width:  100%;
+    height: 100%;
 }
+
 
 /* https://www.w3docs.com/snippets/css/how-to-vertically-center-text-with-css.html#use-css-flexbox-8 */
 .center-children, body{
@@ -12,16 +13,32 @@
     justify-content:center;
 }
 
-body{
+
+
+#main{
     width: 100%;
     height: 100%;
 
     background-color: black;
+    color: white;
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+
+    text-align: center;
+}
+
+#main-box{
+    grid-column: 1 / 4;
+
+    padding: 5% 0;
 }
 
 @font-face { font-family: JuneBug; src: url('JUNEBUG.TTF'); } 
-h1 {
+#play-game-button {
     font-family: "JetBrains Mono NL";
-    font-size: 30vh;
+    font-size: 20vh;
     color: white;
+    text-decoration: none;
 }

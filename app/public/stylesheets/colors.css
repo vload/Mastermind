@@ -1,0 +1,16 @@
+body, html, #game-grid{
+    background-color: rgb(66, 66, 66);
+}
+
+.box{
+    background-color:gray;
+}
+
+#waiting{
+    background-color: rgba(0, 0, 0, 80%);
+}
+
+#waiting-text{
+    font-size: 5vh;
+    color: white;
+}
