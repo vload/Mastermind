@@ -1,3 +1,4 @@
 .old
+.vscode
 bin
 node_modules
