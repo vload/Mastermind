@@ -323,10 +323,6 @@ function recieveResponse() {
     return response;
 }
 
-function onAllPlayersConnected() {
-    removeWaiting();
-}
-
 window.onload = function () {
     setGridLayout();
     generateColorSelectors();
@@ -335,5 +331,18 @@ window.onload = function () {
     generateGuessBoxesAndGuessResponseBoxes();
     generateGuessResponseItems();
 
-    setTimeout(onAllPlayersConnected, 1000);
 }
+
+const socket = new WebSocket("ws://localhost:3000");
+
+socket.onmessage = function (event) {
+    alert(event);
+    // target.innerHTML = event.data;
+};
+
+socket.onopen = function () {
+    socket.send("Hello from the client!");
+    // target.innerHTML = "Sending a first message to the server ...";
+
+    removeWaiting();
+};
