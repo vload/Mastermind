@@ -38,7 +38,8 @@ body, html{
 
     row-gap: 1%;
 
-    display: grid;
+    display: none;
+    /* display: grid; */
     place-items: center;
 }
 
@@ -63,7 +64,7 @@ p{
     z-index: 5;
 }
 
-.color-button:active, #test-button:active{
+.color-button:active, .first-button:active{
     transform: scale(97%);
 }
 

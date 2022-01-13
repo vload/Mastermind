@@ -8,18 +8,17 @@
     <title>Mastermind</title>
     <link rel="stylesheet" type="text/css" href="stylesheets/game_style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/colors.css" media="screen" />
-    <script src="javascripts/game.js"></script>
 </head>
 
 <body>
-    <div id="game-grid">
-        <div id="test-button" class="box" onclick="onGuessButtonClick(this)">
-            <p>Guess</p>
-        </div>
-    </div>
     <div id="waiting">
         <p id="waiting-text">waiting for other player</p>
     </div>
+
+    <script src="javascripts/messages.js"></script>
+    <script src="javascripts/generate.js"></script>
+
+    <script src="javascripts/interactions.js"></script>
 </body>
 
 </html>
