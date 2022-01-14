@@ -128,12 +128,17 @@ function Game(id) {
         newPlayer.con.on("message", this.getMessageHandler(newPlayer));
 
         this.players.push(newPlayer);
+
+        console.log(
+            `[LOG] Player ${con["id"]} placed in game ${this.id}`
+        );
     }
 
     this.hasTwoConnectedPlayers = () => {
         return this.players.length == 2;
     }
 
+    // TODO: Fix bug when a game is finihed.
     this.abort = () => {
         this.players.forEach(player => {
             try {
