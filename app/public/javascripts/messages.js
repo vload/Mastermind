@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 (function (exports) {
     /*
      * Guesser to server: send guess data

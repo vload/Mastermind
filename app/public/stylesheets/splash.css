@@ -4,16 +4,12 @@ body, html{
     height: 100%;
 }
 
-
-/* https://www.w3docs.com/snippets/css/how-to-vertically-center-text-with-css.html#use-css-flexbox-8 */
-.center-children, body{
+body{
     display: inline-flex;
     margin: auto;
     align-items:center;
     justify-content:center;
 }
-
-
 
 #main{
     width: 100%;

@@ -13,7 +13,7 @@ function Generator() {
         guessResponseItem.classList.add('circle');
 
         return guessResponseItem;
-    };
+    }
 
     this.generateGuessResponseItems = () => {
         for (let i = 0; i < guesses; i++) {
@@ -22,7 +22,7 @@ function Generator() {
             for (let j = 0; j < columns; j++)
                 guessResponse.appendChild(this.generateGuessResponseItem(i, j));
         }
-    };
+    }
 
     this.generateGuessResponse = (i) => {
         let guessResponse = this.getNewDiv();
@@ -31,7 +31,7 @@ function Generator() {
         guessResponse.classList.add('box');
 
         return guessResponse;
-    };
+    }
 
     this.generateGuessBox = (i, j) => {
         let guessBox = this.getNewDiv();
@@ -40,7 +40,7 @@ function Generator() {
         guessBox.classList.add('box');
 
         return guessBox;
-    };
+    }
 
     this.generateGuessBoxesAndGuessResponseBoxes = () => {
         for (let i = 0; i < guesses; i++) {
@@ -49,7 +49,7 @@ function Generator() {
             for (let j = 0; j < columns; j++)
                 this.getGrid().appendChild(this.generateGuessBox(i, j));
         }
-    };
+    }
 
     this.generateColorElement = (j) => {
         let colorElement = this.getNewDiv();
@@ -58,7 +58,7 @@ function Generator() {
         colorElement.classList.add('box');
 
         return colorElement;
-    };
+    }
 
     this.generateInnerBox = (j) => {
         let innerBox = this.getNewDiv();
@@ -69,7 +69,7 @@ function Generator() {
         innerBox.appendChild(this.generateColorElement(j));
 
         return innerBox;
-    };
+    }
 
     this.generateInnerBoxesAndColorElements = () => {
         for (let j = 0; j < columns; j++) {
@@ -77,7 +77,7 @@ function Generator() {
 
             colorSelector.appendChild(this.generateInnerBox(j));
         }
-    };
+    }
 
     this.generateColorButton = (j, color) => {
         let colorButton = this.getNewDiv();
@@ -88,7 +88,7 @@ function Generator() {
         colorButton.setAttribute('onclick', 'onColorButtonClick(this)');
 
         return colorButton;
-    };
+    }
 
     this.generateColorButtons = () => {
         for (let j = 0; j < columns; j++) {
@@ -102,7 +102,7 @@ function Generator() {
 
             colorSelector.appendChild(div);
         }
-    };
+    }
 
     this.generateColorSelector = (j) => {
         let colorSelector = this.getNewDiv();
@@ -111,12 +111,12 @@ function Generator() {
         colorSelector.classList.add('box');
 
         return colorSelector;
-    };
+    }
 
     this.generateColorSelectors = () => {
         for (let j = 0; j < columns; j++)
             this.getGrid().appendChild(this.generateColorSelector(j));
-    };
+    }
 
     this.setGridLayout = () => {
         this.getGrid().style.gridTemplateColumns =
@@ -124,23 +124,23 @@ function Generator() {
 
         this.getGrid().style.gridTemplateRows =
             '2fr ' + '1fr '.repeat(guesses);
-    };
+    }
 
     this.showGameGrid = () => {
         this.getGrid().style.display = 'grid';
-    };
+    }
 
     this.getGrid = () => {
         return document.getElementById('game-grid');
-    };
+    }
 
     this.getNewDiv = () => {
         return document.createElement('div');
-    };
+    }
 
     this.getBackgroundColor = (element) => {
         return window.getComputedStyle(element).getPropertyValue('background-color');
-    };
+    }
 
     this.generateGameGrid = () => {
         let body = document.getElementsByTagName('body')[0];
@@ -148,7 +148,7 @@ function Generator() {
         gameGrid.id = "game-grid";
 
         body.appendChild(gameGrid);
-    };
+    }
 
     this.generateGuessButton = () => {
         let guessButton = this.getNewDiv();
@@ -159,7 +159,7 @@ function Generator() {
         guessButton.innerHTML = "<p>Guess</p>";
 
         this.getGrid().appendChild(guessButton);
-    };
+    }
 
     this.generatePage = () => {
         this.generateGameGrid();
@@ -172,21 +172,23 @@ function Generator() {
         this.generateGuessBoxesAndGuessResponseBoxes();
         this.generateGuessResponseItems();
         this.showGameGrid();
-    };
+    }
 
+    // TODO: make this pretty
     this.generateAbortMessage = () => {
         let body = document.getElementsByTagName('body')[0];
 
         body.innerHTML = '<p style="font-size:10">Game Aborted<p>';
-    };
+    }
 
-
+    // TODO: make this pretty
     this.generateWinMessage = () => {
         let body = document.getElementsByTagName('body')[0];
 
         body.innerHTML = '<p style="font-size:10">You win<p>';
-    };
+    }
 
+    // TODO: make this pretty
     this.generateLoseMessage = () => {
         let body = document.getElementsByTagName('body')[0];
 

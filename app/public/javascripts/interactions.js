@@ -2,12 +2,19 @@
 
 let generated = false;
 let feedbackColors;
-let generator = new Generator();
+
+const generator = new Generator();
+
+const socket = new WebSocket("ws://localhost:3000");
+socket.onmessage = handleMessage;
+socket.onopen = generator.generatePage;
+
+function removeElement(element) {
+    element.parentNode.removeChild(element);
+}
 
 function removeWaiting() {
-    let w = document.getElementById("waiting");
-
-    w.parentNode.removeChild(w);
+    removeElement(document.getElementById("waiting"));
 }
 
 function animateColorButton(colorButton) {
@@ -179,7 +186,7 @@ function sendGuess(colors) {
 
 function handleMessage(event) {
     let incomingMsg = JSON.parse(event.data);
-    console.log("[LOG] Message: " + incomingMsg);
+    console.log("[LOG] Message: " + event);
 
     switch (incomingMsg.type) {
         case Messages.T_FEEDBACK:
@@ -201,11 +208,3 @@ function handleMessage(event) {
             console.log("[WARN] Unhandled message: " + incomingMsg);
     }
 }
-
-const socket = new WebSocket("ws://localhost:3000");
-
-socket.onmessage = handleMessage;
-
-socket.onopen = function () {
-    generator.generatePage();
-};

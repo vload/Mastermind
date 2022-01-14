@@ -39,7 +39,6 @@ body, html{
     row-gap: 1%;
 
     display: none;
-    /* display: grid; */
     place-items: center;
 }
 

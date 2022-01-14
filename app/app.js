@@ -33,13 +33,16 @@ setInterval(function () {
     for (let i in websockets) {
         if (Object.prototype.hasOwnProperty.call(websockets, i)) {
             let gameObj = websockets[i];
+            if (gameObj.finalStatus === "COMPLETED") {
+                gameStats.completedGames++;
+            }
             //if the gameObj has a final status, the game is complete/aborted
             if (gameObj.finalStatus != null) {
                 delete websockets[i];
             }
         }
     }
-}, 50000);
+}, 1000);
 
 let currentGame = new Game(gameStats.startedGames++);
 let connectionID = 0; //each websocket receives a unique ID
@@ -68,7 +71,7 @@ wss.on("connection", function connection(con) {
          */
         console.log(`[LOG] Player ${con["id"]} disconnected ...`);
 
-        if (code == 1001){
+        if (code == 1001) {
             websockets[con["id"]].abort();
             gameStats.abortedGames++;
         }

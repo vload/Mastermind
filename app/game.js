@@ -33,7 +33,7 @@ function Game(id) {
                 player.con.send(messages.S_WIN);
         });
 
-        this.finalStatus = true;
+        this.finalStatus = "COMPLETED";
         this.players = null;
     }
 
@@ -50,8 +50,9 @@ function Game(id) {
             this.endGame();
     }
 
+    // TODO: fix duplicate white pieces 
     this.handleGuess = (guessedColors, player) => {
-        if (player.guesses == 12) {
+        if (player.guesses == guesses) {
             console.log(`[WARN] Player ${player} tried to guess too many times.`);
             return;
         }
@@ -136,8 +137,8 @@ function Game(id) {
         console.log(
             `[LOG] Player ${con["id"]} placed in game ${this.id}`
         );
-        
-        if(this.hasTwoConnectedPlayers()){
+
+        if (this.hasTwoConnectedPlayers()) {
             this.players.forEach(player => {
                 player.con.send(messages.S_PLAYERS_CONNECTED);
             });
@@ -155,7 +156,7 @@ function Game(id) {
                 player = null;
             }
 
-            this.finalStatus = true;
+            this.finalStatus = "ABORTED";
         });
     }
 

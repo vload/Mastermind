@@ -8,12 +8,10 @@ router.get("/play", function (req, res) {
 });
 
 router.get("/", function (req, res) {
-    // res.sendFile("splash.html", { root: "./public" });
-
     res.render("splash.ejs", {
         startedGames: gameStats.startedGames,
         abortedGames: gameStats.abortedGames,
-        completedGames: gameStats.completedGames 
+        completedGames: gameStats.completedGames
     });
 });
 module.exports = router;
