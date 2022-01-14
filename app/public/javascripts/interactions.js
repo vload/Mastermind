@@ -2,6 +2,7 @@
 
 let generated = false;
 let feedbackColors;
+let generator = new Generator();
 
 function removeWaiting() {
     let w = document.getElementById("waiting");
@@ -14,7 +15,7 @@ function animateColorButton(colorButton) {
 }
 
 function setColorElementColor(colorButton) {
-    let color = getBackgroundColor(colorButton);
+    let color = generator.getBackgroundColor(colorButton);
     let colorSelector = colorButton.parentNode.parentNode
     let colorElement = colorSelector.querySelector(".color-element");
     colorElement.style.backgroundColor = color;
@@ -163,14 +164,6 @@ function onGuessButtonClick(guessButton) {
     setTimeout(recieveAndProcessResponse, 400);
 }
 
-function getGrid() {
-    return document.getElementById('game-grid');
-}
-
-function getNewDiv() {
-    return document.createElement('div');
-}
-
 function getBackgroundColor(element) {
     return window.getComputedStyle(element).getPropertyValue('background-color');
 }
@@ -193,13 +186,13 @@ function handleMessage(event) {
             feedbackColors = incomingMsg.data;
             break;
         case Messages.T_ABORT:
-            generateAbortMessage();
+            generator.generateAbortMessage();
             break;
         case Messages.T_WIN:
-            generateWinMessage();
+            generator.generateWinMessage();
             break;
         case Messages.T_LOSE:
-            generateLoseMessage();
+            generator.generateLoseMessage();
             break;
         case Messages.T_PLAYERS_CONNECTED:
             removeWaiting();
@@ -214,5 +207,5 @@ const socket = new WebSocket("ws://localhost:3000");
 socket.onmessage = handleMessage;
 
 socket.onopen = function () {
-    generatePage();
+    generator.generatePage();
 };
