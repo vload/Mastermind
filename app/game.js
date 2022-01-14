@@ -115,6 +115,10 @@ function Game(id) {
         }
     }
 
+    this.hasTwoConnectedPlayers = () => {
+        return this.players.length == 2;
+    }
+
     this.addPlayer = (con) => {
         function Player(con, playerAmount) {
             this.con = con;
@@ -132,10 +136,12 @@ function Game(id) {
         console.log(
             `[LOG] Player ${con["id"]} placed in game ${this.id}`
         );
-    }
-
-    this.hasTwoConnectedPlayers = () => {
-        return this.players.length == 2;
+        
+        if(this.hasTwoConnectedPlayers()){
+            this.players.forEach(player => {
+                player.con.send(messages.S_PLAYERS_CONNECTED);
+            });
+        }
     }
 
     // TODO: Fix bug when a game is finihed.

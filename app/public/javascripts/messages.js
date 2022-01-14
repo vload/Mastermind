@@ -43,5 +43,14 @@
         type: exports.T_ABORT,
     };
     exports.S_ABORT = JSON.stringify(exports.O_ABORT);
+
+    /*
+     * Server to guesser: all players connected
+     */
+    exports.T_PLAYERS_CONNECTED = "PLAYERS CONNECTED";
+    exports.O_PLAYERS_CONNECTED = {
+        type: exports.T_PLAYERS_CONNECTED,
+    };
+    exports.S_PLAYERS_CONNECTED = JSON.stringify(exports.O_PLAYERS_CONNECTED);
 })(typeof exports === "undefined" ? (this.Messages = {}) : exports);
 //if exports is undefined, we are on the client; else the server

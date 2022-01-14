@@ -172,8 +172,6 @@ function generatePage() {
     generateGuessBoxesAndGuessResponseBoxes();
     generateGuessResponseItems();
     showGameGrid();
-
-    removeWaiting();
 }
 
 function generateAbortMessage() {

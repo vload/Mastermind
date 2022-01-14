@@ -201,6 +201,9 @@ function handleMessage(event) {
         case Messages.T_LOSE:
             generateLoseMessage();
             break;
+        case Messages.T_PLAYERS_CONNECTED:
+            removeWaiting();
+            break;
         default:
             console.log("[WARN] Unhandled message: " + incomingMsg);
     }
