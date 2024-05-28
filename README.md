@@ -8,8 +8,7 @@ This is a multiplayer browser-based Mastermind game using HTML, CSS and JavaScri
 ## Installation
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/)
-- [Express](https://expressjs.com/)
+Install Node.js from [this link](https://nodejs.org/).
 
 Clone the repository and run the following commands to install prerequisites and build the project:
 ```sh
