@@ -34,7 +34,7 @@ If you want strategies to play the game, you can check out the [Mastermind Wikip
 
 ## Screenshots
 
-![Gameplay](/screenshots/image.png?raw=true "Gameplay")
+![Gameplay](/image.png?raw=true "Gameplay")
 
 ## Meta
 
